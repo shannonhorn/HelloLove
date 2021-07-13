@@ -1,0 +1,87 @@
+.logo .name {
+  font-family: "Rock Salt", cursive;
+  font-size: var(--step-1);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: 0.6s;
+  z-index: 1000;
+}
+
+.header * {
+  color: var(--color-white) !important;
+}
+
+.header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.header .logo .name {
+  font-size: var(--step-0);
+}
+
+.header.sticky {
+  background-color: var(--color-black-nav);
+  padding-top: 0.325rem;
+  padding-bottom: 0.325rem;
+}
+
+.header .nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-right: var(--padding-sides);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.header .nav .burger {
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-input);
+  transition: all 0.3s ease-in-out;
+}
+
+.header .nav .burger::before,
+.header .nav .burger::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-input);
+  transition: all 0.3s ease-in-out;
+}
+
+.header .nav .burger::before {
+  transform: translateY(-8px);
+}
+
+.header .nav .burger::after {
+  transform: translateY(8px);
+}
+
+.header .nav.hamburger-menu-open .burger {
+  transform: translateX(-8px);
+  background-color: transparent;
+}
+
+.header .nav.hamburger-menu-open .burger::before {
+  transform: rotate(45deg) translate(6px, -6px);
+}
+
+.header .nav.hamburger-menu-open .burger::after {
+  transform: rotate(-45deg) translate(6px, 6px);
+}
