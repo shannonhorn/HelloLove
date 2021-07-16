@@ -1,7 +1,6 @@
 import styles from "../styles/Header.module.css";
 
-const Header = () => {
-  return (
+const Header = () => (
     <header className={`${styles.header} animate-pop-in animation-delay`}>
       <section className={styles.logo}>
         <svg
@@ -24,6 +23,5 @@ const Header = () => {
       </nav>
     </header>
   );
-};
 
 export default Header;
