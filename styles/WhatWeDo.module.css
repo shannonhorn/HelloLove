@@ -1,0 +1,12 @@
+@media (min-width: 64em) {
+  .what_we_do ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .what_we_do ul > li {
+    margin-top: 0;
+    flex-basis: 30%;
+    flex-shrink: 0;
+  }
+}
