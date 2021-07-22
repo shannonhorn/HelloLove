@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Header from "../components/header";
@@ -17,6 +18,9 @@ export async function getStaticProps() {
 }
 
 const Home = (props) => {
+  const [appointmentTypes, setAppointmentTypes] = useState(
+    props.appointmentTypes.filter((type) => type.active && !type.private)
+  );
   return (
     <>
       <Head>
@@ -27,11 +31,7 @@ const Home = (props) => {
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
-        <Packages
-          packages={props.appointmentTypes.filter(
-            (type) => type.active && !type.private
-          )}
-        />
+        <Packages packages={appointmentTypes} />
       </section>
     </>
   );

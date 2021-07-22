@@ -24,6 +24,7 @@
   --color-gray: hsla(120, 0.5%, 41.8%, 100%);
   --color-gray-light: hsla(120, 0.5%, 41.8%, 6%);
   --color-pink: hsl(8.3, 61%, 76.9%);
+  --color-premium: hsl(42.9, 74.4%, 49%);
 
   /* borders */
   --border-width: 1px;
@@ -31,7 +32,7 @@
   --border-radius-input: 50px;
   --border-radius-card: 0.5rem;
 
-  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 10px 30px hsla(120, 0.9%, 22.5%, 60%);
 
   --measure: 60ch;
 
