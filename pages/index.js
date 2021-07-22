@@ -4,7 +4,6 @@ import Header from "../components/header";
 import Marquee from "../components/marquee";
 import WhatWeDo from "../components/what-we-do";
 import Packages from "../components/packages";
-import useSWR from "swr";
 import GetSharedCredentials from "./api/SharedCredentials";
 
 export async function getStaticProps() {
@@ -18,18 +17,9 @@ export async function getStaticProps() {
 }
 
 const Home = (props) => {
-  const { data, error, isValidating } = useSWR("/api/appointment-types", {
-    initialData: props.appointmentTypes,
-  });
   return (
     <>
       <Head>
-        <script
-          async
-          defer
-          data-domain="hellolove.life"
-          src="https://plausible.io/js/plausible.js"
-        ></script>
         <title>Hello Love Ultrasound: Welcome Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -37,9 +27,11 @@ const Home = (props) => {
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
-        <Packages packages={props.appointmentTypes.filter(
+        <Packages
+          packages={props.appointmentTypes.filter(
             (type) => type.active && !type.private
-          )} />
+          )}
+        />
       </section>
     </>
   );
