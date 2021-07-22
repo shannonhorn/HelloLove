@@ -1,7 +1,6 @@
 import styles from "../styles/Packages.module.css";
 
 const Packages = ({ packages }) => {
-  console.log(packages);
   return (
     <section className={styles.packages}>
       <a id="packages-and-pricing"></a>

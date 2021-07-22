@@ -14,13 +14,12 @@ export async function getStaticProps() {
     GetSharedCredentials()
   );
   const appointmentTypes = await appointmentTypeResponse.json();
-  const activeAppointmentTypes = appointmentTypes.filter(type => type.active && !type.private);
-  return { props: { activeAppointmentTypes } };
+  return { props: { appointmentTypes } };
 }
 
 const Home = (props) => {
   const { data, error, isValidating } = useSWR("/api/appointment-types", {
-    initialData: props.activeAppointmentTypes,
+    initialData: props.appointmentTypes,
   });
   return (
     <>
@@ -38,7 +37,11 @@ const Home = (props) => {
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
-        <Packages packages={props.activeAppointmentTypes} />
+        <Packages
+          packages={props.appointmentTypes.filter(
+            (type) => type.active && !type.private
+          )}
+        />
       </section>
     </>
   );
