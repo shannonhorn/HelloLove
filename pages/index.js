@@ -37,7 +37,9 @@ const Home = (props) => {
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
-        <Packages packages={props.appointmentTypes} />
+        <Packages packages={props.appointmentTypes.filter(
+            (type) => type.active && !type.private
+          )} />
       </section>
     </>
   );
