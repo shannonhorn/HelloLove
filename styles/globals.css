@@ -21,7 +21,7 @@
   --color-fly-out-menu-background: hsla(0, 0%, 9%, 100%);
   --color-fly-out-menu-pink: hsla(6.6, 45.7%, 72.5%, 100%);
   --color-black-nav: hsla(120, 0.9%, 22.5%, 60%);
-  --color-gray: hsla(120, 0.5%, 41.8%, 100%);
+  --color-gray: hsla(120, 0.5%, 41.8%, 90%);
   --color-gray-light: hsla(120, 0.5%, 41.8%, 6%);
   --color-pink: hsl(8.3, 61%, 76.9%);
   --color-premium: hsl(42.9, 74.4%, 49%);
@@ -32,7 +32,7 @@
   --border-radius-input: 50px;
   --border-radius-card: 0.5rem;
 
-  --box-shadow: 0 10px 30px hsla(120, 0.9%, 22.5%, 60%);
+  --box-shadow: 0 10px 30px var(--color-gray);
 
   --measure: 60ch;
 
@@ -40,7 +40,7 @@
   --padding-top-bottom: 4px;
   --padding-sides: 20px;
 
-  --spacing-base: 1rem;
+  --spacing-base: 1.5rem;
   --spacing-double: calc(2 * var(--spacing-base));
 
   --gutter: var(--spacing-base);

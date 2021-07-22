@@ -6,6 +6,7 @@ import Marquee from "../components/marquee";
 import WhatWeDo from "../components/what-we-do";
 import Packages from "../components/packages";
 import GetSharedCredentials from "./api/SharedCredentials";
+import Footer from "../components/footer";
 
 export async function getStaticProps() {
   // fetch appointment types
@@ -32,6 +33,7 @@ const Home = (props) => {
         <Marquee />
         <WhatWeDo />
         <Packages packages={appointmentTypes} />
+        <Footer/>
       </section>
     </>
   );
