@@ -1,0 +1,113 @@
+.footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  padding-left: var(--step-1);
+  padding-right: var(--step-1);
+  padding-top: var(--step-5);
+  padding-bottom: var(--step-4);
+}
+
+.footer > * + * {
+  margin-top: calc(2 * var(--flow-space)) !important;
+}
+
+.footer::before {
+  content: "";
+  background-image: url("https://6d956k9t.tinifycdn.com/ZGZD30y/footer-mobile-portrait.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+
+.footer > * {
+  color: var(--color-white);
+}
+
+.footer h2 {
+  color: var(--color-white);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer p,
+.footer a,
+.footer h3 {
+  font-size: var(--step--2);
+  color: var(--color-white);
+}
+
+.contact_subscribe {
+  margin-top: calc(2 * var(--flow-space));
+  max-width: 98vw;
+}
+
+.footer > section {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.footer > .flow > * + * {
+  margin-top: calc(0.4 * var(--flow-space));
+}
+
+.newsletter {
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  border: transparent;
+  max-width: 100%;
+}
+
+.newsletter fieldset {
+  background-color: var(--color-white);
+  border-radius: var(--border-radius-input);
+  border-color: transparent;
+  max-height: var(--step-4);
+  display: flex;
+  flex-direction: row;
+}
+
+.newsletter fieldset > input {
+  flex-grow: 2;
+  background: transparent;
+  color: var(--color-black);
+  text-align: left;
+}
+
+svg.icon {
+  stroke: var(--color-white);
+  fill: transparent;
+}
+
+a > svg.icon {
+  background-color: transparent;
+  height:3.625rem;
+  width:3.625rem;
+  stroke-width: 1px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: var(--step--1);
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+}
+
+.copyright {
+  font-size: var(--supertiny);
+}

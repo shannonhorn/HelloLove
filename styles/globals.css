@@ -298,6 +298,11 @@ address {
   font-style: normal;
 }
 
+.logo .name {
+  font-family: "Rock Salt", cursive;
+  font-size: var(--step-1);
+}
+
 .icon {
   display: inline-block;
   width: 3.25em;
