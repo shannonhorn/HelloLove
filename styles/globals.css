@@ -73,13 +73,6 @@
   }
 }
 
-@keyframes slide-in {
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 /* animations */
 .animate-pop-in {
   opacity: 0;
@@ -331,14 +324,4 @@ address {
   stroke: var(--color-white);
   fill: var(--color-white);
   padding: 12px;
-}
-
-.icon-arrow-up {
-  position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  border-radius: 0%;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
 }

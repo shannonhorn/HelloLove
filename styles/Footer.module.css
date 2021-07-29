@@ -89,16 +89,35 @@
   text-align: left;
 }
 
-svg.icon {
+.icon {
   stroke: var(--color-white);
   fill: transparent;
 }
 
-a > svg.icon {
+a > .icon {
   background-color: transparent;
-  height:3.625rem;
-  width:3.625rem;
+  height: 3.625rem;
+  width: 3.625rem;
   stroke-width: 1px;
+}
+
+.icon_arrow_up {
+  height: 3.625rem;
+  width: 3.625rem;
+  stroke-width: 1.325px;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  border-radius: 0%;
+  z-index: 1000;
+  transition: 0.6s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll_to_top_active {
+  visibility: visible;
+  opacity: 0.6;
 }
 
 .title {

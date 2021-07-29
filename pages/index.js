@@ -28,12 +28,13 @@ const Home = (props) => {
         <title>Hello Love Ultrasound: Welcome Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <a id="top"></a>
       <Header />
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
         <Packages packages={appointmentTypes} />
-        <Footer/>
+        <Footer />
       </section>
     </>
   );
