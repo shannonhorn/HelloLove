@@ -1,8 +1,54 @@
+import { useState, useEffect } from "react";
 import { useForm } from "@formspree/react";
 import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
+  const [scrollToTopActive, setScrollToTopActive] = useState(false);
   const [state, handleSubmit] = useForm("xqkwdooz");
+  useEffect(() => {
+    window.addEventListener("scroll", UpdateScrollToTop);
+    const smoothScroll = (destination, duration) => {
+      const target = document.querySelector(destination);
+      const targetPosition = target.getBoundingClientRect().top;
+      const startPosition = window.pageYOffset;
+      let startTime = null;
+
+      const animateScroll = (currentTime) => {
+        if (startTime === null) {
+          startTime = currentTime;
+        }
+        let timeElapsed = currentTime - startTime;
+        let runAnimation = easeInOutQuad(
+          timeElapsed,
+          startPosition,
+          targetPosition,
+          duration
+        );
+        window.scrollTo(0, runAnimation);
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animateScroll);
+        }
+      };
+
+      let easeInOutQuad = (t, b, c, d) => {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      };
+
+      requestAnimationFrame(animateScroll);
+    };
+    document
+      .querySelector(".scroll-to-top")
+      .addEventListener("click", () => smoothScroll("#top", 400));
+    return () => window.removeEventListener("scroll", UpdateScrollToTop);
+  }, []);
+  const UpdateScrollToTop = () => {
+    window.scrollY >= 54
+      ? setScrollToTopActive(true)
+      : setScrollToTopActive(false);
+  };
   return (
     <footer className={`${styles.footer} flow`}>
       <section className={`${styles.contact_subscribe} ${styles.flow}`}>
@@ -199,7 +245,26 @@ const Footer = () => {
           </a>
         </section>
         <div className={styles.copyright}>Hello Love &copy; 2021</div>
-      </section>{" "}
+      </section>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        className={`icon scroll-to-top ${styles.icon} ${styles.icon_arrow_up} ${
+          scrollToTopActive ? styles.scroll_to_top_active : ""
+        }`}
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M17.25 10.25L12 4.75L6.75 10.25"
+        ></path>
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          d="M12 19.25V5.75"
+        ></path>
+      </svg>
     </footer>
   );
 };
