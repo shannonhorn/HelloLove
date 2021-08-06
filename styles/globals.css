@@ -17,12 +17,11 @@
   /* colors */
   --color-white: hsla(0, 0%, 100%, 1);
   --color-black: hsla(120, 0.9%, 22.5%, 100%);
-  --color-fly-out-menu-white: hsla(0, 17.6%, 96.7%, 100%);
-  --color-fly-out-menu-background: hsla(0, 0%, 9%, 100%);
-  --color-fly-out-menu-pink: hsla(6.6, 45.7%, 72.5%, 100%);
   --color-black-nav: hsla(120, 0.9%, 22.5%, 60%);
   --color-gray: hsla(120, 0.5%, 41.8%, 90%);
+  --color-gray-hover: hsla(120, 0.5%, 41.8%, 10%);
   --color-gray-light: hsla(120, 0.5%, 41.8%, 6%);
+  --color-gray-hover: hsla(132,8.5%,88.4%,90%);
   --color-pink: hsl(8.3, 61%, 76.9%);
   --color-premium: hsl(42.9, 74.4%, 49%);
 
@@ -103,6 +102,10 @@ body {
   font-family: var(--font-copy);
   color: var(--color-gray);
   overflow-x: hidden;
+}
+
+.no_scroll {
+  overflow: hidden;
 }
 
 .wrapper {

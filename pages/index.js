@@ -22,6 +22,12 @@ const Home = (props) => {
   const [appointmentTypes, setAppointmentTypes] = useState(
     props.appointmentTypes.filter((type) => type.active && !type.private)
   );
+  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
+  const [packageSelected, setPackageSelected] = useState({
+    name: "Select a package to get started!",
+    price: undefined,
+    dateToBook: undefined,
+  });
   return (
     <>
       <Head>
@@ -29,11 +35,22 @@ const Home = (props) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <a id="top"></a>
-      <Header />
+      <Header
+        hamburgerMenuOpen={hamburgerMenuOpen}
+        setHamburgerMenuOpen={setHamburgerMenuOpen}
+        packageSelected={packageSelected}
+        setPackageSelected={setPackageSelected}
+        packages={appointmentTypes}
+      />
       <section className={styles.wrapper}>
         <Marquee />
         <WhatWeDo />
-        <Packages packages={appointmentTypes} />
+        <Packages
+          packages={appointmentTypes}
+          hamburgerMenuOpen={hamburgerMenuOpen}
+          setHamburgerMenuOpen={setHamburgerMenuOpen}
+          setPackageSelected={setPackageSelected}
+        />
         <Footer />
       </section>
     </>
