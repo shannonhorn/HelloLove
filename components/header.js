@@ -1,28 +1,35 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Header.module.css";
+import DropDownAppointmentTypes from "../controls/dropdown-appointment-types";
+import DropDownAvailabilityDates from "../controls/dropdown-availability-dates";
 
-const Header = () => {
+const Header = ({
+  hamburgerMenuOpen,
+  setHamburgerMenuOpen,
+  packageSelected,
+  setPackageSelected,
+  packages,
+}) => {
   const [navbarActive, setNavbarActive] = useState(false);
-  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   useEffect(() => {
-    const hamburgerMenu = document.querySelector("nav");
-    hamburgerMenu.addEventListener("click", () => {
-      if (!hamburgerMenuOpen) {
-        setHamburgerMenuOpen(true);
-      } else {
-        setHamburgerMenuOpen(false);
-      }
-    });
-    document
-      .querySelector("#fly_out_menu_close")
-      .addEventListener("click", () => {
-        setHamburgerMenuOpen(false);
-      });
     window.addEventListener("scroll", UpdateNavBar);
     return () => window.removeEventListener("scroll", UpdateNavBar);
   }, []);
   const UpdateNavBar = () => {
     window.scrollY >= 54 ? setNavbarActive(true) : setNavbarActive(false);
+  };
+  const OpenFlyOutMenu = () => {
+    if (!hamburgerMenuOpen) {
+      document.body.classList.add("no_scroll");
+      setHamburgerMenuOpen(true);
+    } else {
+      document.body.classList.remove("no_scroll");
+      setHamburgerMenuOpen(false);
+    }
+  };
+  const CloseFlyOutMenu = () => {
+    document.body.classList.remove("no_scroll");
+    setHamburgerMenuOpen(false);
   };
   return (
     <header
@@ -48,6 +55,7 @@ const Header = () => {
         className={`${styles.nav} ${
           hamburgerMenuOpen ? styles.hamburger_menu_open : ""
         }`}
+        onClick={OpenFlyOutMenu}
       >
         <div className={styles.burger}></div>
       </nav>
@@ -59,6 +67,7 @@ const Header = () => {
         <div
           id="fly_out_menu_close"
           className={styles.fly_out_menu_close}
+          onClick={CloseFlyOutMenu}
         ></div>
         <section className={`${styles.fly_out_menu_logo} flow`}>
           <svg
@@ -80,13 +89,27 @@ const Header = () => {
               className={styles.link}
               href="mailto:Jessica@hellolove.life?subject=Inquiry from our website"
             >
-              reach out to us
+              &nbsp;reach out to us
             </a>
             !
           </div>
         </section>
-        <section className={styles.fly_out_menu_body}>
-          Select a package to get stared!
+        <section className={`${styles.fly_out_menu_body} ${styles.flow}`}>
+          <div>
+            <p>Select package</p>
+            <DropDownAppointmentTypes
+              packageSelected={packageSelected}
+              setPackageSelected={setPackageSelected}
+              packages={packages}
+            />
+          </div>
+          <div>
+            <p>Date to book</p>
+            <DropDownAvailabilityDates
+              packageSelected={packageSelected}
+              setPackageSelected={setPackageSelected}
+            />
+          </div>
         </section>
         <section className={styles.fly_out_menu_footer}>
           <div className={styles.heading}>FOLLOW US</div>

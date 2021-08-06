@@ -1,0 +1,65 @@
+.dd_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 44px;
+  max-height: 46px;
+  position: relative;
+}
+
+.dd_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-color: var(--color-gray);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+  width: 100%;
+  padding: 2px 8px;
+  background-color: var(--color-white);
+  font-size: 0.925rem;
+}
+
+.dd_header[data-disabled="true"] {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.dd_header > * {
+  color: var(--color-black) !important;
+}
+
+.dd_header > svg {
+  height: 32px;
+  width: 32px;
+}
+
+.dd_header > svg > path {
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1px;
+}
+
+.dd_list {
+  position: absolute;
+  top: 44px;
+}
+
+.dd_list_item {
+  background-color: var(--color-white);
+  color: var(--color-black) !important;
+  border-radius: 2px;
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--color-black-nav);
+}
+
+.dd_list_item:hover {
+  background-color: var(--color-gray-hover);
+}
+
+.dd_list_item > span {
+  color: var(--color-black) !important;
+}

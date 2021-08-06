@@ -1,6 +1,21 @@
 import styles from "../styles/Packages.module.css";
 
-const Packages = ({ packages }) => {
+const Packages = ({
+  packages,
+  hamburgerMenuOpen,
+  setHamburgerMenuOpen,
+  setPackageSelected,
+}) => {
+  const SelectPackage = (event) => {
+    if (!hamburgerMenuOpen) {
+      document.body.classList.add("no_scroll");
+      setHamburgerMenuOpen(true);
+    } else {
+      document.body.classList.remove("no_scroll");
+      setHamburgerMenuOpen(false);
+    }
+    setPackageSelected(packages.find((item) => item.id == event.target.id));
+  };
   return (
     <section className={styles.packages}>
       <a id="packages-and-pricing"></a>
@@ -29,8 +44,8 @@ const Packages = ({ packages }) => {
                 <a
                   id={currentPackage.id}
                   className={`btn btn-primary ${styles.btn_select_package}`}
-                  data-package={currentPackage.id}
                   href="#"
+                  onClick={SelectPackage}
                 >
                   Select This Package
                 </a>
