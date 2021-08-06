@@ -26,6 +26,12 @@
   padding-bottom: 0.325rem;
 }
 
+.navbar_active {
+  background-color: var(--color-black-nav);
+  padding-top: 0.325rem;
+  padding-bottom: 0.325rem;
+}
+
 .header * {
   color: var(--color-white) !important;
   --flow-space: var(--step-1);
