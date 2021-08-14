@@ -9,7 +9,6 @@ import GetSharedCredentials from "./api/SharedCredentials";
 import Footer from "../components/footer";
 
 export async function getStaticProps() {
-  // fetch appointment types
   const appointmentTypeResponse = await fetch(
     `https://acuityscheduling.com/api/v1/appointment-types`,
     GetSharedCredentials()
