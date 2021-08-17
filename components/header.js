@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../styles/Header.module.css";
+import DropDownAppointmentTypes from "../controls/dropdown-appointment-types";
+import DropDownAvailabilityDates from "../controls/dropdown-availability-dates";
 
 const Header = ({
   hamburgerMenuOpen,
