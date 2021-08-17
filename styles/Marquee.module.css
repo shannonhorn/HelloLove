@@ -9,7 +9,7 @@
 
 .hero::before {
   content: "";
-  background-image: url("../public/images/hero\ -\ mobile\ -\ portrait.jpg");
+  background-image: url("../public/images/hero_mobile_portrait.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;
@@ -24,7 +24,7 @@
 
 @media (min-width: 68.75em) {
   .hero::before {
-    background-image: url("../public/images/hero\ -\ full\ size.jpg");
+    background-image: url("../public/images/hero_full_size.jpg");
   }
 }
 

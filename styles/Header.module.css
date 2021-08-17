@@ -222,6 +222,7 @@
   padding: 2rem;
   flex-direction: column;
   padding-bottom: 0;
+  margin-bottom: 3rem;
 }
 
 .fly_out_menu .fly_out_menu_footer .heading {

@@ -21,7 +21,7 @@
   --color-gray: hsla(120, 0.5%, 41.8%, 90%);
   --color-gray-hover: hsla(120, 0.5%, 41.8%, 10%);
   --color-gray-light: hsla(120, 0.5%, 41.8%, 6%);
-  --color-gray-hover: hsla(132,8.5%,88.4%,90%);
+  --color-gray-hover: hsla(132, 8.5%, 88.4%, 90%);
   --color-pink: hsl(8.3, 61%, 76.9%);
   --color-premium: hsl(42.9, 74.4%, 49%);
 
@@ -142,7 +142,7 @@ body {
 
 .aurora::before {
   content: "";
-  background-image: url("https://6d956k9t.tinifycdn.com/m9XCjKw/aurora-background-mobile-portrait.jpg");
+  background-image: url("../public/images/aurora_background_mobile_portrait.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: right;

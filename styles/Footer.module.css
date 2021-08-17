@@ -17,7 +17,7 @@
 
 .footer::before {
   content: "";
-  background-image: url("https://6d956k9t.tinifycdn.com/ZGZD30y/footer-mobile-portrait.jpg");
+  background-image: url("../public/images/footer_mobile_portrait.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
