@@ -9,7 +9,6 @@ import GetSharedCredentials from "./api/SharedCredentials";
 import Footer from "../components/footer";
 
 export async function getStaticProps() {
-  // fetch appointment types
   const appointmentTypeResponse = await fetch(
     `https://acuityscheduling.com/api/v1/appointment-types`,
     GetSharedCredentials()
@@ -24,7 +23,7 @@ const Home = (props) => {
   );
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   const [packageSelected, setPackageSelected] = useState({
-    name: "Select a package to get started!",
+    name: "Select a package or call",
     price: undefined,
     dateToBook: undefined,
   });

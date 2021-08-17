@@ -95,21 +95,19 @@ const Header = ({
           </div>
         </section>
         <section className={`${styles.fly_out_menu_body} ${styles.flow}`}>
-          <div>
-            <p>Select package</p>
-            <DropDownAppointmentTypes
-              packageSelected={packageSelected}
-              setPackageSelected={setPackageSelected}
-              packages={packages}
-            />
-          </div>
-          <div>
-            <p>Date to book</p>
-            <DropDownAvailabilityDates
-              packageSelected={packageSelected}
-              setPackageSelected={setPackageSelected}
-            />
-          </div>
+          {!packageSelected.price && <p>{packageSelected.name}</p>}
+          {packageSelected.price && (
+            <>
+              <p>
+                We would love to book a {packageSelected.name} package for you.
+                We are currently not booking appointments online.
+              </p>
+              <p>Please call the number below to book your appointment.</p>
+            </>
+          )}
+          <a className={styles.link} href="tel:6235566767">
+            <address>(623) 556-6767</address>
+          </a>
         </section>
         <section className={styles.fly_out_menu_footer}>
           <div className={styles.heading}>FOLLOW US</div>

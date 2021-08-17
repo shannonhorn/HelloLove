@@ -1,15 +1,29 @@
 import { useState } from "react";
+import useAvailabilityDates from "../hooks/useAvailabilityDates";
 import styles from "../styles/DropDownAppointmentTypes.module.css";
 
-const DropDownAvailabilityDates = ({ packageSelected, setPackageSelected }) => {
+const DropDownAvailabilityDates = ({ packageSelected }) => {
   const [open, setOpen] = useState(false);
+  const today = new Date();
+  const currentMonthYear = `${today.getFullYear()}-${(
+    "0" +
+    (today.getMonth() + 1)
+  ).slice(-2)}`;
+  const { availabilityDates } = useAvailabilityDates(
+    packageSelected.id,
+    currentMonthYear,
+    packageSelected.calendarIDs?.[0]
+  );
+
+  console.log(availabilityDates);
+
   const toggle = () => setOpen(!open);
   const selectItem = (item) => {
     console.log(item);
     toggle(!open);
   };
   return (
-    <div className={styles.dd_wrapper} style={{zIndex:9}}>
+    <div className={styles.dd_wrapper} style={{ zIndex: 9 }}>
       <div
         tabIndex={0}
         className={styles.dd_header}
