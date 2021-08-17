@@ -23,7 +23,7 @@ const Home = (props) => {
   );
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   const [packageSelected, setPackageSelected] = useState({
-    name: "Select a package to get started!",
+    name: "Select a package or call",
     price: undefined,
     dateToBook: undefined,
   });

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAvailabilityDates from "./useAvailabilityDates";
+import useAvailabilityDates from "../hooks/useAvailabilityDates";
 import styles from "../styles/DropDownAppointmentTypes.module.css";
 
 const DropDownAvailabilityDates = ({ packageSelected }) => {
